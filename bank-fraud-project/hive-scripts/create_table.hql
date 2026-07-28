@@ -1,4 +1,3 @@
--- إنشاء جدول Hive فوق الداتا المخزنة في HDFS (Parquet من Spark)
 CREATE EXTERNAL TABLE IF NOT EXISTS transactions (
     transaction_id STRING,
     account_id STRING,
