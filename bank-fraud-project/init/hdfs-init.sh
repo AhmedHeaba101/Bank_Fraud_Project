@@ -1,4 +1,3 @@
-#!/bin/bash
 set -e
 
 echo "[HDFS Init] Waiting for HDFS to be ready..."
