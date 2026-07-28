@@ -94,8 +94,6 @@ services:
       - bigdata-net
 
   # ---------- Spark ----------
-  # استخدمنا الصورة الرسمية من Apache (apache/spark) بدل bitnami/spark
-  # لأن Bitnami وقفت توفير الصور مجانًا على Docker Hub
   spark-master:
     image: apache/spark:3.5.0
     container_name: spark-master
@@ -136,8 +134,6 @@ services:
       - bigdata-net
 
   # ---------- Initialization Services ----------
-  # بتستخدم نفس صور الخدمات الأساسية (فيها الأدوات المطلوبة بالفعل)
-  # بدل بناء صورة جديدة، عشان نتجنب مشاكل تثبيت برامج زيادة
   kafka-init:
     image: confluentinc/cp-kafka:7.5.0
     container_name: kafka-init
@@ -189,8 +185,6 @@ services:
       - bigdata-net
 
   # ---------- Producer / Simulator ----------
-  # بيولّد معاملات وهمية ويبعتها للـ API تلقائيًا — شغال جوه container،
-  # مش محتاج Python على جهازك
   producer:
     build: ./producer
     container_name: producer
