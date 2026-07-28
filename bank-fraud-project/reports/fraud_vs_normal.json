@@ -1,0 +1,10 @@
+[
+  {
+    "is_fraud": true,
+    "total": 137
+  },
+  {
+    "is_fraud": false,
+    "total": 1048
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "location": "Cairo",
+    "fraud_count": 33
+  },
+  {
+    "location": "Aswan",
+    "fraud_count": 29
+  },
+  {
+    "location": "Luxor",
+    "fraud_count": 28
+  },
+  {
+    "location": "Alexandria",
+    "fraud_count": 24
+  },
+  {
+    "location": "Giza",
+    "fraud_count": 23
+  }
+]

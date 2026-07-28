@@ -1,0 +1,52 @@
+[
+  {
+    "account_id": "ACC0014",
+    "fraud_count": 16,
+    "total_amount": 171513.6
+  },
+  {
+    "account_id": "ACC0012",
+    "fraud_count": 11,
+    "total_amount": 139417.5
+  },
+  {
+    "account_id": "ACC0013",
+    "fraud_count": 10,
+    "total_amount": 119289.26000000001
+  },
+  {
+    "account_id": "ACC0010",
+    "fraud_count": 10,
+    "total_amount": 127373.44
+  },
+  {
+    "account_id": "ACC0002",
+    "fraud_count": 10,
+    "total_amount": 107800.86
+  },
+  {
+    "account_id": "ACC0020",
+    "fraud_count": 9,
+    "total_amount": 107749.59
+  },
+  {
+    "account_id": "ACC0011",
+    "fraud_count": 8,
+    "total_amount": 121917.78
+  },
+  {
+    "account_id": "ACC0019",
+    "fraud_count": 8,
+    "total_amount": 116887.26
+  },
+  {
+    "account_id": "ACC0007",
+    "fraud_count": 7,
+    "total_amount": 87519.51000000001
+  },
+  {
+    "account_id": "ACC0001",
+    "fraud_count": 6,
+    "total_amount": 73114.43
+  }
+]
