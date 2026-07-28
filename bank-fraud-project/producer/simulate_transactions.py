@@ -1,15 +1,3 @@
-"""
-Transaction Simulator
-----------------------
-سكريبت بسيط بيولّد معاملات بنكية عشوائية (بعضها طبيعي وبعضها مشبوه)
-ويبعتها لـ Transaction Ingestion API عن طريق HTTP.
-
-استخدمه وقت الـ demo عشان توري إن الداتا بتتحرك في السيستم لحظيًا.
-
-Usage:
-    python simulate_transactions.py
-"""
-
 import requests
 import random
 import time
