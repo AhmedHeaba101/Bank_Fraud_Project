@@ -1,17 +1,3 @@
-"""
-Report Generator (Hive-free)
-------------------------------
-بيقرأ الداتا المخزنة في HDFS (اللي كتبها fraud_detection_streaming.py)
-مباشرة عن طريق Spark، بيحسب نفس التحليلات اللي كانت متخططة تتعمل في Hive،
-وبيحفظها كملفات JSON بسيطة في مجلد مشترك (/opt/reports) عشان الـ API
-يقرأها ويقدمها لـ Power BI من غير ما يحتاج Hive يكون شغال.
-
-Run:
-    spark-submit --master spark://spark-master:7077 generate_reports.py
-
-ملحوظة: شغّل السكريبت ده تاني كل ما تحب تحدّث النتائج (بعد ما تجمع
-معاملات جديدة عن طريق المحاكاة).
-"""
 
 import json
 import os
@@ -39,7 +25,6 @@ def save_json(filename, rows):
     print(f"Saved {filename} ({len(rows)} rows)")
 
 
-# 1) عدد المعاملات المشبوهة لكل منطقة
 fraud_by_location = (
     df.filter(col("is_fraud") == True)
     .groupBy("location")
@@ -48,7 +33,7 @@ fraud_by_location = (
 )
 save_json("fraud_by_location.json", [row.asDict() for row in fraud_by_location.collect()])
 
-# 2) أكتر الحسابات تكرارًا في الفراود
+
 top_fraud_accounts = (
     df.filter(col("is_fraud") == True)
     .groupBy("account_id")
@@ -58,11 +43,11 @@ top_fraud_accounts = (
 )
 save_json("top_fraud_accounts.json", [row.asDict() for row in top_fraud_accounts.collect()])
 
-# 3) مقارنة المعاملات العادية مقابل المشبوهة
+
 fraud_vs_normal = df.groupBy("is_fraud").agg(count("*").alias("total"))
 save_json("fraud_vs_normal.json", [row.asDict() for row in fraud_vs_normal.collect()])
 
-# 4) كل المعاملات (raw، للاستخدام الحر في Power BI)
+
 all_tx = df.select(
     "transaction_id", "account_id", "amount", "transaction_type",
     "location", "timestamp", "is_fraud"
